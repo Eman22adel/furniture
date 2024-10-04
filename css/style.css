@@ -548,9 +548,6 @@ h1 {
         right: 38%;
     }
 
-    /* Hide scrollbar for all elements */
-
-
     /*------------------------- header ------------------------ */
     .header_nav,
     .header_igon {
@@ -573,6 +570,7 @@ h1 {
     }
 
     /*------------------------- main ------------------------ */
+
     header {
         height: 9vh;
         position: relative;
@@ -650,6 +648,11 @@ h1 {
         right: 0PX;
     }
 
+    .Penelope_item:nth-child(2):hover,
+    .Penelope_item:nth-child(3):hover {
+        transform: scale(1);
+    }
+
     /* -------------------------- icones ------------------------------ */
     * {
         scrollbar-width: none;
@@ -667,6 +670,7 @@ h1 {
         border: none;
         width: 60%;
         flex-shrink: 0;
+        margin-right: 1rem;
     }
 
     /* -------------------------- Featured ------------------------------ */
