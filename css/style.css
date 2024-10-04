@@ -1,0 +1,949 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*transition: transform 0.5s, visibility .5s;*/
+body {
+    perspective: 700px;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    margin: 3% 0px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    width: 130px;
+    height: 3px;
+    background-color: #7B5244;
+    position: absolute;
+    right: 44%;
+    bottom: -11px;
+    transition: 0.5s;
+}
+
+h2:hover::after {
+    transform: scaleX(1.5);
+}
+
+/* ----------------------- header -------------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    height: 10vh;
+}
+
+.header_logo {
+    width: 13%;
+    height: 100%;
+}
+
+.header_logo img {
+    width: 100%;
+    height: 80%;
+    margin-top: 5%;
+}
+
+.header_nav {
+    width: 100%;
+    position: relative;
+}
+
+.header_nav>ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 18px;
+}
+
+.header_nav>ul li {
+    position: relative;
+    padding: 5px 10px;
+    margin-right: 15px;
+}
+
+.header_nav>ul li::before,
+.header_nav>ul li::after {
+    content: "";
+    position: absolute;
+    transition: 0.2s;
+    visibility: hidden;
+
+}
+
+.header_nav>ul li::after {
+    left: 0;
+    top: 0px;
+    width: 0%;
+    height: 95%;
+    border-top: 2px solid #7B5244;
+    border-bottom: 2px solid #7B5244;
+    transition-delay: 0.4s;
+}
+
+.header_nav>ul li:hover::after {
+    visibility: visible;
+    width: 100%;
+}
+
+.header_nav>ul li::before {
+    right: 0;
+    top: 0px;
+    width: 97%;
+    height: 0%;
+    border-left: 2px solid #7B5244;
+    border-right: 2px solid #7B5244;
+}
+
+.header_nav>ul li:hover::before {
+    visibility: visible;
+    height: 100%;
+}
+
+.header_nav>ul li:nth-child(1) {
+    color: #7B5244;
+    font-weight: bolder;
+}
+
+.header_igon i {
+    font-size: 25px;
+    color: #7B5244;
+}
+
+.header_igon {
+    position: relative;
+}
+
+.header_igon i:nth-child(2) {
+    margin: 0px 25px;
+}
+
+.header_igon i:nth-child(3) {
+    position: relative;
+}
+
+.header_igon i span {
+    background-color: #504037;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 15px;
+    position: absolute;
+    font-size: 12px;
+    top: -15px;
+    right: -22px;
+}
+
+.nav_phone i {
+    display: none;
+}
+
+.header_nav_top {
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    background-color: white;
+    padding: 4%;
+    border: 2px solid #7B5244;
+    transform: scale(0);
+    transition: transform 0.5s, visibility .5s;
+    opacity: 0;
+}
+
+.header_nav_top_item>ul {
+    list-style: none;
+    color: #7B5244;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.header_nav_top_item p {
+    color: #7B5244;
+    width: 45%;
+    border-bottom: 2px dotted #7B5244;
+    margin: 5px 0px 10% 10px;
+}
+
+.header_nav>ul>li:nth-child(1):hover .header_nav_top {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* -------------------------- main ------------------------------ */
+main {
+    background: linear-gradient(to right, #827068, #aa9a8e, #827068);
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.main_content {
+    width: 40%;
+    color: white;
+}
+
+.main_img {
+    width: 40%;
+}
+
+.main_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.main_content button {
+    width: 240px;
+    height: 50px;
+    margin-top: 9%;
+    border-radius: 15px;
+    background-color: transparent;
+    color: white;
+    background: linear-gradient(to right, #1e130c, #7b675d);
+    font-weight: bolder;
+    font-size: larger;
+    border: none;
+}
+
+/* -------------------------- Special category ------------------------------ */
+.Special_category {
+    display: flex;
+    grid-gap: 15px;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.Special_category_item {
+    position: relative;
+}
+
+.Special_category_item img {
+    width: 100%;
+    height: 80%;
+}
+
+.Special_category_item_title {
+    color: #848680;
+    font-size: 15px;
+    margin: 5px 0px;
+}
+
+.Special_category_item_details {
+    font-size: 20px;
+}
+
+.Special_category_item_icon {
+    position: absolute;
+    font-size: 20px;
+    background-color: #7B5244;
+    color: white;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    padding: 5px 0px;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+}
+
+.Special_category_item:hover .Special_category_item_icon {
+    visibility: visible;
+}
+
+/* -------------------------- Penelope Astrid ------------------------------ */
+.Penelope {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    height: 45vh;
+    grid-gap: 20px;
+    margin: 1% 0px;
+}
+
+.Penelope_item {
+    height: 100%;
+}
+
+.Penelope_item:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: #F7F3EF;
+    padding: 20px 15px;
+}
+
+.Penelope_item_header {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    margin-bottom: 20px;
+}
+
+.Penelope_item_header i {
+    font-size: 80px;
+    color: #7B5244;
+    padding-right: 10px;
+}
+
+.Penelope_item_title p {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.Penelope_item_content {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.Penelope_item_content_icon {
+    width: 100%;
+    text-align: right;
+    margin-top: 2%;
+}
+
+.Penelope_item_content_icon span {
+    display: inline-block;
+    width: 50px;
+    height: 2px;
+    background-color: #7B5244;
+    margin: 0px 5px;
+}
+
+.Penelope_item:nth-child(2) {
+    background-image: url(../img/Penelope/cms-banner-1.jpg);
+}
+
+.Penelope_item:nth-child(3) {
+    background-image: url(../img/Penelope/cms-banner-2.jpg);
+
+}
+
+.Penelope_item:nth-child(2),
+.Penelope_item:nth-child(3) {
+    font-size: 20px;
+    padding: 15px 0px 0px 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+}
+
+.Penelope_item:nth-child(2) span,
+.Penelope_item:nth-child(3) span {
+    color: #7B5244;
+    font-weight: 500;
+}
+
+.Penelope_item:nth-child(2) p,
+.Penelope_item:nth-child(3) p {
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+.Penelope_item:nth-child(2):hover,
+.Penelope_item:nth-child(3):hover {
+    transform: scale(1.1);
+}
+
+/* -------------------------- icones ------------------------------ */
+.icones {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 6% 0px;
+    padding-bottom: 3%;
+    border-bottom: #848680 solid 2px;
+}
+
+.icones_item {
+    height: fit-content;
+    padding-right: 2.7%;
+}
+
+.icones_item_img {
+    background-image: url(../img/icon/service-icon.png);
+    background-repeat: no-repeat;
+    height: 55px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.icones_item:nth-child(1) .icones_item_img {
+    background-position: center 0px;
+}
+
+.icones_item:nth-child(2) .icones_item_img {
+    background-position: center -180px;
+}
+
+.icones_item:nth-child(3) .icones_item_img {
+    background-position: center -366px;
+}
+
+.icones_item:nth-child(4) .icones_item_img {
+    background-position: center -549px;
+}
+
+.icones_item:nth-child(5) .icones_item_img {
+    background-position: center -734px;
+}
+
+.icones_item:nth-child(1) .icones_item_img:hover {
+    background-position: center -90px;
+}
+
+.icones_item:nth-child(2) .icones_item_img:hover {
+    background-position: center -270px;
+}
+
+.icones_item:nth-child(3) .icones_item_img:hover {
+    background-position: center -456px;
+}
+
+.icones_item:nth-child(4) .icones_item_img:hover {
+    background-position: center -639px;
+}
+
+.icones_item:nth-child(5) .icones_item_img:hover {
+    background-position: center -824px;
+}
+
+.icones_item:nth-child(1),
+.icones_item:nth-child(2),
+.icones_item:nth-child(3),
+.icones_item:nth-child(4) {
+    border-right: #848680 solid 2px;
+}
+
+.icones_item p {
+    font-weight: bolder;
+    font-size: 18px;
+    margin-bottom: 2%;
+}
+
+.icones_item span {
+    color: #848680;
+}
+
+/* -------------------------- Featured ------------------------------ */
+.Featured_list {
+    display: flex;
+    list-style: none;
+    margin: auto;
+    width: 40%;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.Featured_list>li:nth-child(2) {
+    color: #7B5244;
+    font-weight: bold;
+}
+
+.Featured {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 15px;
+    margin: 5% 0%;
+}
+
+.Featured_item {
+    padding: 15px;
+}
+
+.Featured_item_front {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    margin-bottom: 5%;
+    transition-timing-function: linear;
+}
+
+.feature_item_image {
+    background-color: #F7F3EF;
+    backface-visibility: hidden;
+}
+
+.feature_item_image img,
+.Featured_item_back_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.Featured_item_back {
+    padding: 15px;
+    position: absolute;
+    background-color: rgba(53, 51, 44, 0.5);
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.Featured_item_front:hover {
+    transform: rotateY(180deg);
+}
+
+.Featured_item_front:hover .Featured_item_back {
+    visibility: visible;
+    transform: rotateY(180deg);
+}
+
+.Featured_item_back_icon {
+    width: 70%;
+    position: absolute;
+    top: 35%;
+    right: 45%;
+    transform: translate(50%, 50%);
+    color: white;
+    font-size: 30px;
+}
+
+.Featured_item_back_icon i {
+    width: 20%;
+    height: 20%;
+    margin: 0px 1%;
+    background-color: #7B5244;
+    padding: 1.5% 2%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.Featured_item span {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.Featured_item p {
+    margin: 5px 0px;
+}
+
+.feature_item_rate i {
+    color: #b28536;
+}
+
+@media (max-width: 576px) {
+
+    /* ---------------------- general ---------------------- */
+    h2::after {
+        width: 80px;
+        right: 38%;
+    }
+
+    /* Hide scrollbar for all elements */
+
+
+    /*------------------------- header ------------------------ */
+    .header_nav,
+    .header_igon {
+        display: none;
+        width: 100%;
+    }
+
+    .nav_phone {
+        display: block;
+        font-size: 25px;
+        color: #7B5244;
+    }
+
+    .header_logo {
+        width: 30%;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    /*------------------------- main ------------------------ */
+    header {
+        height: 6vh;
+        position: relative;
+    }
+
+    main {
+        height: 34vh;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .main_content button {
+        width: 120px;
+        height: 30px;
+        font-size: 12px;
+        margin-top: 5%;
+    }
+
+    .main_content {
+        width: 80%;
+        color: white;
+        text-align: center;
+    }
+
+    /*------------------------- Special category ------------------------ */
+    .Special_category {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .Special_category_item {
+        margin: 4% 0px;
+        margin: auto;
+        width: 95%;
+    }
+
+    .Special_category_item img {
+        width: 100%;
+    }
+
+    /* -------------------------- Penelope Astrid ------------------------------ */
+    .Penelope {
+        display: flex;
+        flex-direction: column;
+        height: 150vh;
+
+    }
+
+    .Penelope_item:nth-child(1) {
+        height: fit-content;
+    }
+
+    .Penelope_item:nth-child(2),
+    .Penelope_item:nth-child(3) {
+        background-position: 0px -73px;
+        height: 50vh;
+    }
+
+    .Special_category_item_icon {
+        right: 0PX;
+    }
+
+    /* -------------------------- icones ------------------------------ */
+    * {
+        scrollbar-width: none;
+    }
+
+    .icones {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }
+
+    .icones_item {
+        border: none;
+        width: 60%;
+        flex-shrink: 0;
+    }
+
+    /* -------------------------- Featured ------------------------------ */
+    .Featured_list {
+        margin: 6% auto;
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .Featured {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-gap: 15px;
+        margin: 5% 0%;
+    }
+
+    .nav_phone i {
+        display: block;
+    }
+
+    .nav_phone:hover .header_nav {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+    }
+
+    .header_nav ul li {
+        width: 100%;
+    }
+
+    .nav_phone:hover .header_nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        width: 60vw;
+        background-color: white;
+        border-radius: 5px;
+        border: 2px solid #7B5244;
+        padding: 15px;
+    }
+
+    .nav_phone:hover .header_nav .header_nav_top {
+        display: none;
+    }
+
+}
+
+@media (min-width: 760px) and (max-width: 992px) {
+
+    /* ---------------------- general ---------------------- */
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h2::after {
+        width: 80px;
+        right: 44%;
+    }
+
+    /*------------------------- header ------------------------ */
+    .header_nav,
+    .header_igon {
+        display: none;
+    }
+
+    .nav_phone {
+        display: block;
+        font-size: 25px;
+        color: #7B5244;
+    }
+
+    .header_logo {
+        width: 20%;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    /*------------------------- main ------------------------ */
+    header {
+        height: 6vh;
+    }
+
+    main {
+        height: 23vh;
+        justify-content: space-around;
+    }
+
+    .main_content button {
+        width: 120px;
+        height: 40px;
+        font-size: 15px;
+        margin-top: 5%;
+    }
+
+
+    /*------------------------- Special category ------------------------ */
+    .Special_category {
+        flex-direction: row;
+        text-align: left;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .Special_category_item {
+        width: 48%;
+    }
+
+    .Special_category_item img {
+        width: 100%;
+    }
+
+    /* -------------------------- Penelope Astrid ------------------------------ */
+    .Penelope {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 60vh;
+    }
+
+    .Penelope_item:nth-child(2),
+    .Penelope_item:nth-child(3) {
+        background-position: 0px -60px;
+    }
+
+    .Special_category_item_icon {
+        right: 0PX;
+    }
+
+    /* -------------------------- icones ------------------------------ */
+    .icones {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 15px 0px;
+    }
+
+    .icones_item:nth-child(2) {
+        border-right: #848680 solid 2px;
+        border-left: #848680 solid 2px;
+    }
+
+    .icones_item {
+        padding: 0% 15px;
+    }
+
+    .icones_item:nth-child(3),
+    .icones_item:nth-child(5),
+    .icones_item:nth-child(1) {
+        border-right: none;
+    }
+
+    /* -------------------------- Featured ------------------------------ */
+    .Featured_list {
+        margin: 6% auto;
+        width: 90%;
+        font-size: 18px;
+    }
+
+    .Featured {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 15px;
+        margin: 5% 0%;
+    }
+
+    .nav_phone i {
+        display: block;
+    }
+
+    .nav_phone:hover .header_nav {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+    }
+
+    .header_nav ul li {
+        width: 100%;
+    }
+
+    .nav_phone:hover .header_nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        width: 60vw;
+        background-color: white;
+        border-radius: 5px;
+        border: 2px solid #7B5244;
+        padding: 15px;
+    }
+
+    .nav_phone:hover .header_nav .header_nav_top {
+        display: none;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1026px) {
+
+    /* ---------------------- general ---------------------- */
+    h1 {
+        font-size: 35px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h2::after {
+        width: 80px;
+        right: 44%;
+    }
+
+    /*------------------------- header ------------------------ */
+
+
+    .header_logo {
+        width: 11%;
+        height: 100%;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    /*------------------------- main ------------------------ */
+    header {
+        height: 5vh;
+    }
+
+    main {
+        height: 30vh;
+        justify-content: space-around;
+    }
+
+    .main_content button {
+        width: 120px;
+        height: 40px;
+        font-size: 15px;
+        margin-top: 5%;
+    }
+
+
+    /*------------------------- Special category ------------------------ */
+    .Special_category {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    .Special_category_item p {
+        margin-bottom: 1rem;
+    }
+
+    .Special_category_item_icon {
+        position: absolute;
+        font-size: 20px;
+        background-color: #7B5244;
+        color: white;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        padding: 5px 0px;
+        right: 0;
+        bottom: 34px;
+        visibility: hidden;
+    }
+
+    .Penelope {
+        height: fit-content;
+
+    }
+}
