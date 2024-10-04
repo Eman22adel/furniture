@@ -624,20 +624,27 @@ h1 {
 
     /* -------------------------- Penelope Astrid ------------------------------ */
     .Penelope {
-        display: flex;
-        flex-direction: column;
-        height: 150vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 135vh;
+        margin-top: 2rem;
+        gap: 1rem;
 
     }
 
     .Penelope_item:nth-child(1) {
         height: fit-content;
+        grid-column: 1/3;
     }
 
     .Penelope_item:nth-child(2),
     .Penelope_item:nth-child(3) {
         background-position: 0px -73px;
-        height: 50vh;
+        margin: 0;
+        height: 60vh;
+        font-size: 1rem;
+        border-radius: 1rem;
     }
 
     .Special_category_item_icon {
@@ -665,9 +672,9 @@ h1 {
 
     /* -------------------------- Featured ------------------------------ */
     .Featured_list {
-        margin: 6% auto;
-        width: 90%;
-        font-size: 14px;
+        margin: 1% auto;
+        width: 95%;
+        font-size: 12px;
     }
 
     .Featured {
